@@ -5,4 +5,4 @@ Download for windows here: http://www.filedropper.com/autoclicker_13
 
 Select preset speeds for the speed or input your own!
 
-![Interface](https://i.imgur.com/zv7iDon.png)
+![Interface](https://i.imgur.com/qgXkQ6f.png)
