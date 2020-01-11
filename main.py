@@ -30,7 +30,7 @@ def move_mouse():
 slow = colored("S" + "\u0332",'white') + colored('low: 0.01','white')
 recommended = colored("R" + "\u0332",'green') + colored('ecommended: 0.001','green')
 fast = colored("F" + "\u0332",'yellow') + colored('ast: 0.0001','yellow')
-insane = colored("I" + "\u0332",'red') + colored('NSANE: 0.0001','red')
+insane = colored("I" + "\u0332",'red') + colored('NSANE: 0.00001','red')
 print(f'{slow}\n{recommended}\n{fast}\n{insane}', colored('\n\nInput a delay:','magenta'))
 delay = input()
 if delay.lower() == 'slow' or delay.lower() == 's': delay = 0.01
