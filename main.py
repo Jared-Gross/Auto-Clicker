@@ -4,11 +4,10 @@ import keyboard as kb
 from pynput.mouse import Button, Controller
 from colorama import init
 from termcolor import colored
-# pip instal termcolor, colorama, keyboard, pyautogui, pynput
+# pip install termcolor, colorama, keyboard, pyautogui, pynput
 init()
 if platform.system() == 'Windows': clear = lambda: os.system('cls')
 elif platform.system() == 'Linux': clear = lambda: os.system('clear')
-    
 isOn = False
 threadsRunning = False
 mousePos = []
@@ -26,7 +25,6 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
 def move_mouse():
     while True:
         if isOn: py.moveTo(mousePos)
-
 def running():
     while True:
         if kb.is_pressed('q'):
@@ -40,7 +38,6 @@ def running():
             if isOn:
                 mouse.click(button)
                 time.sleep(float(delay))
-
 def get_delay():
     global threadsRunning, delay
     clear()
@@ -55,7 +52,7 @@ def get_delay():
     elif '0.' in delay: pass
     else:
         print(colored(f'"{delay}"','cyan'), colored('is not a valid delay.\nMust be smaller than','red'),colored('1','cyan'))
-        time.sleep(2)
+        time.sleep(1)
         get_delay()
     if not threadsRunning:
         threading.Thread(target=running).start()
@@ -76,5 +73,7 @@ def get_delay():
     print(colored("Ready!",'green'))
     time.sleep(1)
     clear()
-    print(colored("Press:",'magenta'), colored('"q"','cyan'), colored("to toggle",'magenta'), colored('on','blue'), colored('and', 'magenta'), colored('off','blue'), colored('\nPress:','magenta'),colored('"e"','cyan'), colored('to change delay.','magenta'),colored("\nDelay set to:",'magenta'),colored(str(delay),'cyan'))
+    print(colored("Press:",'magenta'), colored('"q"','cyan'), colored("to toggle",'magenta'), colored('on','blue'), colored('and', 'magenta'), colored('off','blue'))
+    print(colored('Press:','magenta'),colored('"e"','cyan'), colored('to change delay.','magenta'))
+    print(colored("Delay set to:",'magenta'),colored(str(delay),'cyan'))
 get_delay()
