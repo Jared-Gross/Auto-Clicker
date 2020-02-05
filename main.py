@@ -25,6 +25,7 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
 def move_mouse():
     while True:
         if isOn: py.moveTo(mousePos)
+        time.sleep(0.01)
 def running():
     while True:
         if kb.is_pressed('q'):
@@ -38,6 +39,7 @@ def running():
             if isOn:
                 mouse.click(button)
                 time.sleep(float(delay))
+        time.sleep(0.001)
 def get_delay():
     global threadsRunning, delay
     clear()
